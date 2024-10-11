@@ -15,6 +15,7 @@ struct OrdersPage: View {
     // Bring the singleton that was injected in the App
     @EnvironmentObject var cartManager: CartManager
     
+    
     var body: some View {
         NavigationView {
             if cartManager.cart.count == 0 {
@@ -24,9 +25,9 @@ struct OrdersPage: View {
                 List {
                     Section("ITEMS") {
                         ForEach(cartManager.cart, id:\.0.id) { item in
-                            OrderItem()
+                            OrderItem(item: item)
                         }
-                    }.listRowBackground(Color("Background"))
+                    }.listRowBackground(Color(.cardBackground))
                     
                     Section("YOUR DETAILS") {
                         VStack {
@@ -38,15 +39,15 @@ struct OrdersPage: View {
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.top)
                             .padding(.bottom)
-                    }.listRowBackground(Color("Background"))
+                    }.listRowBackground(Color(.cardBackground))
                     
                     Section() {
                         HStack {
                             Spacer()
                             Text("Total")
                             Spacer()
-//                            Text("$ \(cartManager.total(), specifier: "%.2f")")
-//                                .bold()
+                            Text("$ \(cartManager.total(), specifier: "%.2f")")
+                                .bold()
                             Spacer()
                         }
                     }.listRowBackground(Color.clear)
@@ -60,7 +61,7 @@ struct OrdersPage: View {
                             }
                             .padding()
                             .frame(width: 250.0)
-                            .background(Color("Alternative2"))
+                            .background(.alternative2)
                             .foregroundColor(Color.black)
                             .cornerRadius(25)
                             
@@ -68,7 +69,7 @@ struct OrdersPage: View {
                         }
                     }.listRowBackground(Color.clear)
                 }
-                .listSectionSeparatorTint(Color("AccentColor"))
+                .listSectionSeparatorTint(.accent)
                 .listStyle(.insetGrouped)
                 .navigationTitle("Your Order")
 //                .alert("Order", isPresented: $orderConfirmed, actions: {

@@ -10,22 +10,34 @@ import SwiftUI
 struct MenuPage: View {
     
     @EnvironmentObject var menuManger: MenuManager
+    @State var search: String = ""
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(menuManger.menu) { category in
-                    Text(category.name)
+                    if category.filteredItems(text: search).count > 0 {
+                        Text(category.name)
+                            .listRowBackground(Color(.cardBackground))
+                            .foregroundStyle(.secondaryCoffee)
+                            .padding()
+                    }
                     
-                    ForEach(category.products) { product in
-                        NavigationLink{
-                            DetailsPage()
-                        } label: {
-                            ProductItem(product: product)
+                    ForEach(category.filteredItems(text: search)) { item in
+                        ZStack {
+                            NavigationLink(destination: DetailsPage(product: item)) {
+                                EmptyView()
+                            }.opacity(0)
+                            ProductItem(product: item)
+                                .padding(.top)
+                                .padding(.leading)
+                                .padding(.bottom, 12)
                         }
                     }
                 }
-            }.navigationTitle("Products")
+            }
+            .navigationTitle("Products")
+            .searchable(text: $search)
         }
     }
 }

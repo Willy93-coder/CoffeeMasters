@@ -24,6 +24,8 @@
 		48D9D0EC2CB9233F00A5C3C6 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9D0EB2CB9233F00A5C3C6 /* CartManager.swift */; };
 		48D9D0EE2CB9283600A5C3C6 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9D0ED2CB9283600A5C3C6 /* OrderItem.swift */; };
 		48D9D0FA2CB935DC00A5C3C6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48D9D0F92CB935DC00A5C3C6 /* Alamofire */; };
+		48D9D0FD2CB9942400A5C3C6 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9D0FC2CB9942400A5C3C6 /* LikeButton.swift */; };
+		48D9D1022CB9948700A5C3C6 /* LikesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9D1012CB9948700A5C3C6 /* LikesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		48D9D0E92CB9232900A5C3C6 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		48D9D0EB2CB9233F00A5C3C6 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		48D9D0ED2CB9283600A5C3C6 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		48D9D0FB2CB977E700A5C3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		48D9D0FC2CB9942400A5C3C6 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		48D9D1012CB9948700A5C3C6 /* LikesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 		4878FB6D2B63D55300DBD774 /* CoffeeMasters */ = {
 			isa = PBXGroup;
 			children = (
+				48D9D0FB2CB977E700A5C3C6 /* Info.plist */,
 				48D9D0E42CB91F4E00A5C3C6 /* Model */,
 				48D9D0D92CB9195A00A5C3C6 /* Page Views */,
 				48D9D0D82CB9194800A5C3C6 /* Views */,
@@ -102,6 +108,7 @@
 				4873EC792B67CA0E00664D4B /* Offer.swift */,
 				48D9D0E02CB91A7B00A5C3C6 /* ProductItem.swift */,
 				48D9D0ED2CB9283600A5C3C6 /* OrderItem.swift */,
+				48D9D0FC2CB9942400A5C3C6 /* LikeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 				48D9D0E72CB91F7600A5C3C6 /* Product.swift */,
 				48D9D0E92CB9232900A5C3C6 /* MenuManager.swift */,
 				48D9D0EB2CB9233F00A5C3C6 /* CartManager.swift */,
+				48D9D1012CB9948700A5C3C6 /* LikesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,7 +222,9 @@
 				48D9D0EE2CB9283600A5C3C6 /* OrderItem.swift in Sources */,
 				48D9D0E12CB91A7B00A5C3C6 /* ProductItem.swift in Sources */,
 				4878FB712B63D55300DBD774 /* ContentView.swift in Sources */,
+				48D9D1022CB9948700A5C3C6 /* LikesManager.swift in Sources */,
 				48D9D0DD2CB9199500A5C3C6 /* OrdersPage.swift in Sources */,
+				48D9D0FD2CB9942400A5C3C6 /* LikeButton.swift in Sources */,
 				4878FB6F2B63D55300DBD774 /* CoffeeMastersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,11 +359,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeMasters/Preview Content\"";
+				DEVELOPMENT_TEAM = T7DNKZJ8CN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeMasters/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,11 +388,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeMasters/Preview Content\"";
+				DEVELOPMENT_TEAM = T7DNKZJ8CN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeMasters/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

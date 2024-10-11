@@ -15,25 +15,26 @@ struct ProductItem: View {
         VStack{
             AsyncImage(url: product.imageURL)
                 .frame(width: 300, height: 150)
-                .background(Color("AccentColor"))
+                .background(.accent)
             HStack {
                 VStack(alignment: .leading) {
                     Text(product.name)
                         .font(.title3)
                         .bold()
-                    Text("$ \(product.price)")
+                    Text("$ \(product.price, specifier: "%.2f")")
                         .font(.caption)
                     
                 }.padding(8)
                 Spacer()
+                LikeButton(product: product)
             }
         }
-        .background(Color("SurfaceBackground"))
+        .background(.surfaceBackground)
         .cornerRadius(10)
         .padding(.trailing)
     }
 }
 
 #Preview {
-    ProductItem(product: Product(id: 1, name: "Dummy Product",description: "", price: 1.25, image: ""))
+    ProductItem(product: Product(id: 1, name: "Dummy Product",description: "", price: 1.25, image: "")).environmentObject(LikesManager())
 }
